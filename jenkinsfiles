@@ -19,5 +19,21 @@ string(name:'Branch_Name', defaultValue:'main', description:'Enter the branch to
                 sh "pwd"
             }
         }
+        stage('get branchName'){
+        steps{
+        echo $branch_Name
+        }
     }
+    stage('git checkout')
+    {
+    steps{
+    checkout scmGit(branches: [[name: '*/$branch_Name']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-credentials', url: 'https://github.com/kcbrown401/jenkins-project1.git']])
+    }
+    }
+    stage('list files'){
+    steps{
+bat 'dir'
+    }
+    }
+  }
 }
