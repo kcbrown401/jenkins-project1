@@ -38,7 +38,7 @@ version='1.0.0'
 bat 'dir'
     }
     }
-    stage('checking condition'){  #use when giving a condition
+    stage('checking condition'){
     when{
     expression{
     env.BRANCH_NAME=='main'
