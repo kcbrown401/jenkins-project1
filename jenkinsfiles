@@ -51,7 +51,7 @@ bat 'dir'
     stage('variables'){
     steps{
     sh 'echo "$version" '
-    echo "$"{env.version}"
+    echo "${env.version}"
     scrip{
     print evn.version # java scrip
     }
