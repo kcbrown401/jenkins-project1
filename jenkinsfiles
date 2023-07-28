@@ -53,7 +53,7 @@ bat 'dir'
     sh 'echo "$version" '
     echo "${env.version}"
     scrip{
-    print evn.version # java scrip
+    print evn.version
     }
     }
   }
