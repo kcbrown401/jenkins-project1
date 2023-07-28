@@ -7,7 +7,7 @@ environment{
 version='1.0.0'
 }
     stages {
-        stage('Hello') {   # use to Naming
+        stage('Hello') {
             steps {
                 echo 'Hello World'
             }
@@ -50,8 +50,8 @@ bat 'dir'
     }
     stage('variables'){
     steps{
-    sh 'echo "$version" '   # use for shell
-    echo "$"{env.version}"   # use for windows,etc
+    sh 'echo "$version" '
+    echo "$"{env.version}"
     scrip{
     print evn.version # java scrip
     }
