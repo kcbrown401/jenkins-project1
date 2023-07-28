@@ -3,8 +3,11 @@ pipeline {
 parameters{
 string(name:'Branch_Name', defaultValue:'main', description:'Enter the branch to build')
 }
+environment{
+version='1.0.0'
+}
     stages {
-        stage('Hello') {
+        stage('Hello') {   # use to Naming
             steps {
                 echo 'Hello World'
             }
@@ -35,7 +38,7 @@ string(name:'Branch_Name', defaultValue:'main', description:'Enter the branch to
 bat 'dir'
     }
     }
-    stage('checking condition'){
+    stage('checking condition'){  #use when giving a condition
     when{
     expression{
     env.BRANCH_NAME=='main'
@@ -43,6 +46,14 @@ bat 'dir'
     }
     steps{
     echo 'i am running since the condition is met'
+    }
+    }
+    stage('variables'){
+    steps{
+    sh 'echo "$version" '   # use for shell
+    echo "$"{env.version}"   # use for windows,etc
+    scrip{
+    print evn.version # java scrip
     }
     }
   }
