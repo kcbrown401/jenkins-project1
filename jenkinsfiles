@@ -52,8 +52,8 @@ bat 'dir'
     steps{
     sh 'echo "$version" '
     echo "${env.version}"
-    scrip{
-    print evn.version
+    script{
+    print env.version
     }
     }
   }
