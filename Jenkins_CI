@@ -16,5 +16,6 @@ stages{
      step{
       bat 'mvn compile'
       }
-      }
-      }
+    }
+ }
+}
