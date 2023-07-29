@@ -8,12 +8,12 @@ stages{
       }
     }
     stage('Run validate'){
-    step{
+    steps{
      bat 'mvn validate'
   }
  }
   stage('Run compile'){
-     step{
+     steps{
       bat 'mvn compile'
       }
     }
