@@ -1,11 +1,20 @@
 pipeline {
 agent any
-
+tool name: 'Maven_3.8.3', type: 'maven'
 stages{
  stage('Git checkout'){
   steps{
-  echo "git checkout"
+  checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-credentials', url: 'https://github.com/kcbrown401/jenkins-project1.git']])
       }
     }
+    stage('Run validate'){
+    step{
+     bat 'mvn validate'
   }
  }
+  stage('Run compile'){
+     step{
+      bat 'mvn compile'
+      }
+      }
+      }
